@@ -1,13 +1,15 @@
-package com.pl.myfirstapp.myfirstapp;
+package com.pl.rentcars;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyfirstappApplication {
+public class RentCarsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyfirstappApplication.class, args);
-//comment
+		SpringApplication.run(RentCarsApplication.class, args);
 	}
+
+
+
 }
