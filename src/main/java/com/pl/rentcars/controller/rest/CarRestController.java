@@ -21,7 +21,7 @@ public class CarRestController {
     @GetMapping("")
     public ResponseEntity getCars(){
         final List cars = carService.getCars();
-        log.info("getCars");
+   //     log.info("getCars");
         return ResponseEntity.ok().body("cars list: " + cars);
     }
 

@@ -13,12 +13,12 @@ import java.util.List;
 public class CarService {
 
     public void addCar(){
-        System.out.println("ELO");
+        System.out.println("");
     }
 
     public List<Car> getCars(){
         final List cars = carRepository.findAll();
-        log.info("getCars");
+   //     log.info("getCars");
         return cars;
     }
 
