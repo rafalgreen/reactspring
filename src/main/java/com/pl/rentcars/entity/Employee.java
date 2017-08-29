@@ -1,12 +1,17 @@
 package com.pl.rentcars.entity;
 
 import java.io.Serializable;
+import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -19,19 +24,32 @@ public class Employee implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
 	@Column(name = "first_name", columnDefinition = "VARCHAR(45)")
 	private String firstName;
+
 	@Column(name = "last_name", columnDefinition = "VARCHAR(45)")
 	private String lastName;
+
 	@Column(name = "date_of_birth", columnDefinition = "DATE")
-	private String dateOfBirth;
+	private Date dateOfBirth;
+
 	@Column(name = "phone_number", columnDefinition = "INT(11)")
 	private String phoneNumber;
+
 	@Column(name = "id_agency", columnDefinition = "INT(11)")
-	private String idAgency;
+	private Long idAgency;
+
 	@Column(name = "id_position", columnDefinition = "INT(11)")
-	private String idPosition;
+	private PositionDictionary position;
 	
+	@OneToOne(mappedBy = "employee")//nazwa zmiennej w EmployeeAddress
+    private EmployeeAddress employeeAddress;
 	
+
+	
+	// @OneToOne
+	// @JoinColumn(name = "id_address")
+	// private EmployeeAddress employeeAddress;
 
 }

@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -19,11 +21,12 @@ public class Agency implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(name = "name", columnDefinition = "VARCHAR(512)")
+	
+	@Column(name = "name", columnDefinition = "VARCHAR(512)",nullable = false)
 	private String name;
 	
 	@Column(name = "phone_number", columnDefinition = "INT(11)")
-	private String phoneNumber;
+	private int phoneNumber;
 	
 	@Column(name = "city", columnDefinition = "VARCHAR(45)")
 	private String city;
@@ -33,6 +36,10 @@ public class Agency implements Serializable{
 	
 	@Column(name = "zip_code", columnDefinition = "VARCHAR(6)")
 	private String zipCode;
+	
+	
+	
+	
 	
 
 }

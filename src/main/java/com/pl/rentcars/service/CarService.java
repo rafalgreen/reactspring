@@ -2,26 +2,21 @@ package com.pl.rentcars.service;
 
 import com.pl.rentcars.entity.Car;
 import com.pl.rentcars.repository.CarRepository;
-import lombok.extern.log4j.Log4j2;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Log4j2
+@Transactional(readOnly = true)
 public class CarService {
 
-    public void addCar(){
-        System.out.println("");
-    }
+	@Autowired
+	private CarRepository carRepository;
+	
+	public void addCar() {
+		Car car = new Car();
+	carRepository.save(new Car());
+	}
 
-    public List<Car> getCars(){
-        final List cars = carRepository.findAll();
-   //     log.info("getCars");
-        return cars;
-    }
-
-    @Autowired
-    private CarRepository carRepository;
 }
