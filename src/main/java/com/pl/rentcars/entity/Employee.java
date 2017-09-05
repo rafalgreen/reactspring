@@ -3,14 +3,11 @@ package com.pl.rentcars.entity;
 import java.io.Serializable;
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -19,8 +16,12 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "employees")
-
 public class Employee implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -43,7 +44,7 @@ public class Employee implements Serializable {
 	@Column(name = "id_position", columnDefinition = "INT(11)")
 	private PositionDictionary position;
 	
-	@OneToOne(mappedBy = "employee")//nazwa zmiennej w EmployeeAddress
+	@OneToOne(mappedBy = "employee")
     private EmployeeAddress employeeAddress;
 	
 

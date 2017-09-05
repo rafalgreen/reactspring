@@ -19,6 +19,11 @@ import lombok.Data;
 @Data
 @Table(name = "employees_addresses")
 public class EmployeeAddress implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -36,8 +41,9 @@ public class EmployeeAddress implements Serializable{
 	private String zipCode;
 	
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = true)
-	@JoinColumn(name = "id_employee")
+	@OneToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER, optional = true)
+	//fetch
+	@JoinColumn(name = "id")
 	private Employee employee;
 
 	// @OneToOne

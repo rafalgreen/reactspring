@@ -11,35 +11,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pl.rentcars.entity.Car;
-import com.pl.rentcars.service.CarService;
+import com.pl.rentcars.entity.Rent;
+import com.pl.rentcars.service.RentService;
+
 
 @RestController
-@RequestMapping("api/car")
-public class CarRestController {
-
+@RequestMapping("api/rent")
+public class RentRestController {
+	
 	@Autowired
-	private CarService carService;
-
-	// clean code, wykorzystujemy metody
-	// jestem w kontekscie car
-	// do pobierania
-	// get i post przez protokol http
+	private RentService rentService;
 
 	@GetMapping(value = "", produces = { MediaType.APPLICATION_JSON_VALUE })
-	public ResponseEntity findCars() {
-		// responseEntity to co chce zwrocic
-		// posiada status zadania
-		// moze przyjmowac status
-		final List<Car> cars = carService.findCars();
-		return ResponseEntity.ok().body("Cars list: " + cars);
+	public ResponseEntity findRent() {
+		final List<Rent> rents = rentService.findAll();
+		return ResponseEntity.ok().body("List of clients: " + rents);
 	}
+
 
 	// do dodawania
 	@PostMapping("")
-	public ResponseEntity addCars(Car car) {
+	public ResponseEntity addRent(Rent rent) {
 		// settery
-		carService.addCar(car);
-		return ResponseEntity.ok().body("addCars");
+		rentService.addRent(rent);
+		return ResponseEntity.ok().body("addRent");
 	}
-
+	
+	
 }

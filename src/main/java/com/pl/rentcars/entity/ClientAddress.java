@@ -19,6 +19,11 @@ import lombok.Data;
 @Data
 @Table(name = "clients_addresses")
 public class ClientAddress implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

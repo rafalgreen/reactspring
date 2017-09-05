@@ -10,13 +10,16 @@ import java.io.Serializable;
 @Table(name = "cars")
 public class Car implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	//AUTO - provider JPA samodzielnie dobiera strategię
 	private Long id;
-	@Column(name = "name", columnDefinition = "VARCHAR(45)", nullable = false)
-	private String name;
-	
+
 	@Column(name = "brand", columnDefinition = "VARCHAR(45)",nullable = false)
 	private String brand;
 	
