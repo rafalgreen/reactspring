@@ -44,25 +44,6 @@ public class Car implements Serializable {
 	@Column(name = "id_agency", columnDefinition = "INT(11)", nullable = false)
 	private Long idAgency;
 	
-	public Car(Long id, String brand, String identityNumber, Integer priceForDay, String color, Integer enginePower,
-			Integer engineSize, Boolean isAvailable, Long idAgency) {
-		super();
-		this.id = id;
-		this.brand = brand;
-		this.identityNumber = identityNumber;
-		this.priceForDay = priceForDay;
-		this.color = color;
-		this.enginePower = enginePower;
-		this.engineSize = engineSize;
-		this.isAvailable = isAvailable;
-		this.idAgency = idAgency;
-	}
-	
-	public Car() {
-		
-	}
-
-	
 
 	// w Car mamy Agency
 	// w Agency mamy Client itd itd
