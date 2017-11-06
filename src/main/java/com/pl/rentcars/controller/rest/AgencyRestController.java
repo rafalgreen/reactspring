@@ -29,7 +29,12 @@ public class AgencyRestController {
 	
 	@PostMapping("")
 	public ResponseEntity addAgenyc(Agency agency) {
-		// settery
+		agency.setId(agency.getId());
+		agency.setCity(agency.getCity());
+		agency.setName(agency.getCity());
+		agency.setPhoneNumber(agency.getPhoneNumber());
+		agency.setStreet(agency.getStreet());
+		agency.setZipCode(agency.getZipCode());
 		agencyService.addAgency(agency);
 		return ResponseEntity.ok().body("addAgency");
 	}

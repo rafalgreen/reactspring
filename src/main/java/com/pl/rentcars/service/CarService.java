@@ -26,16 +26,16 @@ public class CarService {
 	}
 
 	public void updateData(Car car) {
-		// Car carFromDatabase = carRepository.findOne(car.getId);
-		// carFromDatabase.setBrand(car.getBrand());
-		// carFromDatabase.setIdentityNumber(car.getIdentityNumber());
-        // carFromDatabase.setPriceForDay(car.getPriceForDayr());
-		// carFromDatabase.setColor(car.getColor());
-		// carFromDatabase.setEnginePower(car.getEnginePower());
-		// carFromDatabase.setEngineSize(car.getEngineSize());
-		// carFromDatabase.setIsAvailable(car.getIsAvailable());
-		// carFromDatabase.setIdAgency(car.getIdAgency());
-		// carRepository.save(carFromDatabase);
+	Car carFromDatabase = carRepository.findOne(car.getId());
+		carFromDatabase.setBrand(car.getBrand());
+		carFromDatabase.setIdentityNumber(car.getIdentityNumber());
+        carFromDatabase.setPriceForDay(car.getPriceForDay());
+		carFromDatabase.setColor(car.getColor());
+		carFromDatabase.setEnginePower(car.getEnginePower());
+		carFromDatabase.setEngineSize(car.getEngineSize());
+		carFromDatabase.setIsAvailable(car.getIsAvailable());
+		carFromDatabase.setIdAgency(car.getIdAgency());
+		carRepository.save(carFromDatabase);
 	}
 
 	public List<Car> findCars() {

@@ -30,7 +30,6 @@ public class CarAttendant implements Serializable{
 	
 	@Column(name = "id_employee", columnDefinition = "INT(11)",nullable = false)
 	private Long idEmployee;
-	
-	//
 
+	
 }

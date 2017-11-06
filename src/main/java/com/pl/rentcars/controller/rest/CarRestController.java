@@ -20,24 +20,15 @@ public class CarRestController {
 	@Autowired
 	private CarService carService;
 
-	// clean code, wykorzystujemy metody
-	// jestem w kontekscie car
-	// do pobierania
-	// get i post przez protokol http
-
 	@GetMapping(value = "", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity findCars() {
-		// responseEntity to co chce zwrocic
-		// posiada status zadania
-		// moze przyjmowac status
 		final List<Car> cars = carService.findCars();
 		return ResponseEntity.ok().body("Cars list: " + cars);
 	}
 
-	// do dodawania
 	@PostMapping("")
 	public ResponseEntity addCars(Car car) {
-		// settery
+		
 		carService.addCar(car);
 		return ResponseEntity.ok().body("addCars");
 	}

@@ -21,6 +21,8 @@ public class PositionService {
 	public void removePositionDictionary(Long id) {
 		positionRepository.delete(id);
 	}
+	
+	
 
 
 }
