@@ -2,12 +2,11 @@ package com.pl.rentcars.service;
 
 import com.pl.rentcars.entity.Car;
 import com.pl.rentcars.repository.CarRepository;
-
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service//warstwa logiki biznesowej
 @Transactional(readOnly = true)
@@ -42,8 +41,6 @@ public class CarService {
 		
 		return carRepository.findAll();
 	}
-	
-	
-	
+
 
 }
