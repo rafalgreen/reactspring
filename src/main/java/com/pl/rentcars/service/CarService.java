@@ -1,11 +1,14 @@
 package com.pl.rentcars.service;
 
+import com.pl.rentcars.controller.rest.ObjectDTO;
 import com.pl.rentcars.entity.Car;
 import com.pl.rentcars.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service//warstwa logiki biznesowej
@@ -42,5 +45,36 @@ public class CarService {
 		return carRepository.findAll();
 	}
 
+	public Car getCar(){
+		return carRepository.findOne(1L);
+	}
 
+
+	public List<ObjectDTO> getAllCarsPart() {
+		List<Car> cars = carRepository.findAll();
+
+		List<ObjectDTO> carsPart = new ArrayList<>();
+
+		for(Car car: cars){
+			carsPart.add(convert(car));
+		}
+
+		return carsPart;
+	}
+
+	@Cacheable("carsBest")
+	public List<ObjectDTO> getAllCarsPartBestPerformance(){
+		return carRepository.findAllPart();
+	}
+
+	private ObjectDTO convert(Car car){
+		if(car != null){
+			ObjectDTO objectDTO = new ObjectDTO();
+			objectDTO.setBrand(car.getBrand());
+			objectDTO.setInteger(car.getEngineSize());
+			return objectDTO;
+		} else {
+			return null;
+		}
+	}
 }

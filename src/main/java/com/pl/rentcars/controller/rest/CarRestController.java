@@ -34,4 +34,19 @@ public class CarRestController {
 		return ResponseEntity.ok().body("addCars");
 	}
 
+	@GetMapping(value = "/partbest")
+	public ResponseEntity<List<ObjectDTO>> getCarSmallPartBest(){
+		List<ObjectDTO> carsPart = carService.getAllCarsPartBestPerformance();
+		return ResponseEntity.ok().body(carsPart);
+	}
+
+	@GetMapping(value = "/part")
+	public ResponseEntity<List<ObjectDTO>> getCarSmallPart(){
+		List<ObjectDTO> carsPart = carService.getAllCarsPart();
+		return ResponseEntity.ok().body(carsPart);
+	}
+
+
+
+
 }
