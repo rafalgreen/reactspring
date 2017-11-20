@@ -1,18 +1,14 @@
 package com.pl.rentcars.controller.rest;
 
-import java.util.List;
-
+import com.pl.rentcars.entity.Rent;
+import com.pl.rentcars.service.RentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.pl.rentcars.entity.Car;
-import com.pl.rentcars.entity.Rent;
-import com.pl.rentcars.service.RentService;
+import java.util.Date;
+import java.util.List;
 
 
 @RestController
@@ -31,10 +27,15 @@ public class RentRestController {
 
 	// do dodawania
 	@PostMapping("")
-	public ResponseEntity addRent(Rent rent) {
+	public ResponseEntity addRent(@RequestBody Rent rent) {
 		// settery
 		rentService.addRent(rent);
 		return ResponseEntity.ok().body("addRent");
+	}
+
+	public ResponseEntity<Date> getSomeDate(){
+		Date date =   rentService.getRentDateOrReturnDate();
+		return ResponseEntity.ok().body(date);
 	}
 	
 	
