@@ -25,6 +25,5 @@ public class DatabaseLoader implements CommandLineRunner {
         this.repository.save(car);
         this.repository.save(car2);
 
-
     }
 }
