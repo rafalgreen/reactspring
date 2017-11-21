@@ -12,8 +12,8 @@ import com.pl.rentcars.email.EmailService;
 
 @RestController
 public class EmailRestController {
-	//todo
 	//skonfigurowac serwer zainstalowac serwer mailowy
+
 	//modul do szablonow maili template - wa bazie tabela table template
 	//maile jako html lub jako zwykly txt
 	//modul Message = bo bedziemy wysylac tez smsy
@@ -32,7 +32,7 @@ public class EmailRestController {
 	@GetMapping("send-email")
 	public ResponseEntity sendEmail() throws MessagingException {
 		String email = "kazmierczak.oktawia@gmail.com";
-		String title= "Report";
+		String title= "Report 4";
 		String message = "Content";
 		emailService.sendEmail(email, title, message);
 		return ResponseEntity.ok().build();
