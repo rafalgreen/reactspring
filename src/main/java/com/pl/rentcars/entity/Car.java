@@ -23,8 +23,8 @@ public class Car implements Serializable {
 	@Column(name = "brand", columnDefinition = "VARCHAR(45)", nullable = false)
 	private String brand;
 
-	@Column(name = "identity_number", columnDefinition = "VARCHAR(64)", nullable = false)
-	private String identityNumber;
+	@Column(name = "registration_number", columnDefinition = "VARCHAR(64)", nullable = false)
+	private String registrationNumber;
 
 	@Column(name = "price_for_day", columnDefinition = "INT(11)", nullable = false)
 	private Integer priceForDay;
