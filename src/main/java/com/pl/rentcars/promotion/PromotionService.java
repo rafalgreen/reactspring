@@ -1,6 +1,6 @@
 package com.pl.rentcars.promotion;
 
-import com.pl.rentcars.entity.Rent;
+import com.pl.rentcars.general.entity.Rent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

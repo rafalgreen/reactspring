@@ -1,7 +1,7 @@
 package com.pl.rentcars;
 
-import com.pl.rentcars.entity.Car;
-import com.pl.rentcars.repository.CarRepository;
+import com.pl.rentcars.general.entity.Car;
+import com.pl.rentcars.general.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
